@@ -1,0 +1,8 @@
+{
+  "name": "auroramedia-io",
+  "buildCommand": "npm run build",
+  "devCommand": "next dev",
+  "git": { "deploymentsEnabled": true }
+}
+
+

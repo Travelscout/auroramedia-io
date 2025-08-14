@@ -1,103 +1,150 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import React from "react";
+// import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { Server, Bot } from "lucide-react";
+import { FEATURES, PLANS } from "@/lib/content";
+
+export default function AuroraHome() {
+  const shouldReduce = useReducedMotion();
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-100 text-slate-900">
+      <main id="main" className="max-w-7xl mx-auto px-6">
+        {/* Hero Section */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-12">
+          <div>
+            <Badge className="mb-4">Neu · KI-Agenten</Badge>
+            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">Wir bauen KI-Agenten, die dein Vertriebsteam entlasten.</h1>
+            <p className="mt-4 text-lg text-slate-600">AuroraMedia ist die neue AI-Agentur am Himmel von Düsseldorf — Design-first, DSGVO-sicher und sofort einsetzbar. Von Lead-Qualifizierung über Voicebots bis zu RAG-basierten Assistenzsystemen.</p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <div className="mt-6 flex gap-4">
+              <Button>Demo anfragen</Button>
+              <Button variant="outline">Preise ansehen</Button>
+            </div>
+
+            <div className="mt-6 grid grid-cols-2 gap-3 text-sm">
+              <div className="flex items-center gap-3">
+                <Bot className="w-5 h-5" aria-hidden="true" />
+                <div>
+                  <div className="font-medium">Automatisierung</div>
+                  <div className="text-slate-500">Workflows & Voicebots</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <Server className="w-5 h-5" aria-hidden="true" />
+                <div>
+                  <div className="font-medium">DSGVO-konform</div>
+                  <div className="text-slate-500">Self-hosting & Hetzner-ready</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <motion.div
+            initial={shouldReduce ? false : { opacity: 0, y: 20 }}
+            whileInView={shouldReduce ? {} : { opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="relative"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+            <div className="rounded-2xl shadow-xl overflow-hidden bg-white p-6">
+              <div className="flex items-center justify-between">
+                <div className="text-sm font-medium">Live AI-Preview</div>
+                <div className="text-xs text-slate-400">Interaktiv</div>
+              </div>
+              <div className="mt-4 h-56 bg-gradient-to-br from-slate-50 to-white rounded-lg flex items-center justify-center">
+                <div className="text-center text-slate-400">AI-Demo Widget kommt hierhin</div>
+              </div>
+            </div>
+            <div className="absolute -right-6 -bottom-6 w-40 h-40 rounded-3xl bg-gradient-to-tr from-indigo-200 to-pink-200 opacity-40 blur-2xl pointer-events-none" aria-hidden />
+          </motion.div>
+        </section>
+
+        {/* Features Section */}
+        <section id="features" className="py-12">
+          <h2 className="text-2xl font-semibold">Unsere Kernleistungen</h2>
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {FEATURES.map((feature) => (
+              <Card key={feature.title}>
+                <CardContent>
+                  <div className="flex items-start gap-4">
+                    <feature.icon className="w-6 h-6 mt-1" aria-hidden="true" />
+                    <div>
+                      <h3 className="font-semibold">{feature.title}</h3>
+                      <p className="text-sm text-slate-500 mt-1">{feature.desc}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* AI Demo Section */}
+        <section id="ai-demo" className="py-12">
+          <h2 className="text-2xl font-semibold">Interaktive AI-Demo</h2>
+          <p className="text-slate-600 mt-2">Teste einen schlanken Demo-Flow — direkt auf der Seite (ohne Datenfreigabe) oder als Live-Session.</p>
+
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="md:col-span-2">
+              <Card>
+                <CardContent>
+                  <div className="flex flex-col gap-3">
+                    <div className="text-sm text-slate-500">Schreibe hier deine Frage an den Agenten (Beispiel: &quot;Ich brauche ein Beratungsgespräch für Z-Laser&quot;)</div>
+                    <form onSubmit={handleSubmit} className="flex gap-3">
+                      <label htmlFor="question" className="sr-only">Frage an den Agenten</label>
+                      <Input id="question" name="question" placeholder="Frage an den Agenten..." />
+                      <Button type="submit">Absenden</Button>
+                    </form>
+                    <div className="mt-4 text-xs text-slate-400">Hinweis: Demo speichert keine personenbezogenen Daten.</div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+            <div>
+              <Card>
+                <CardContent>
+                  <div className="text-sm">Technik-Info</div>
+                  <ul className="mt-3 text-sm text-slate-600 list-disc pl-5">
+                    <li>Self-hosted LLM (optional)</li>
+                    <li>RAG mit Pinecone/Weaviate oder eigenem Vektorstore</li>
+                    <li>n8n-Integration für Automatisierung</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing Section */}
+        <section id="pricing" className="py-12">
+          <h2 className="text-2xl font-semibold">Preismodelle</h2>
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {PLANS.map((plan) => (
+              <Card key={plan.title}>
+                <CardContent>
+                  <div className="flex flex-col gap-2">
+                    <h3 className="font-semibold text-lg">{plan.title}</h3>
+                    <div className="text-2xl font-bold mt-1">{plan.price}</div>
+                    <p className="text-sm text-slate-500 mt-1">{plan.desc}</p>
+                    <Button variant={plan.variant || "default"} className="mt-3">{plan.btn}</Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
