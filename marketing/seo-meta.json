@@ -1,0 +1,36 @@
+{
+  "title": "AuroraMedia – KI-Agenten & Automatisierung (Pilot in 14 Tagen, DSGVO-konform)",
+  "description": "AI-Agenten Deutschland, Voicebot Arztpraxis, n8n Automatisierung und Content-Automation. Schnell, sicher, skalierbar. Proof-of-Value in 14 Tagen.",
+  "canonical": "https://www.auroramedia.io/",
+  "og": {
+    "type": "website",
+    "title": "AuroraMedia – KI-Agenten & Automatisierung",
+    "description": "Conversational AI & n8n-Workflows für KMU, Kliniken, MedTech. DSGVO-konform.",
+    "url": "https://www.auroramedia.io/",
+    "image": "https://www.auroramedia.io/og.jpg",
+    "locale": "de_DE"
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AuroraMedia",
+    "url": "https://www.auroramedia.io/",
+    "logo": "https://www.auroramedia.io/logo.png",
+    "sameAs": ["https://www.linkedin.com/company/auroramedia"],
+    "foundingLocation": "Malta",
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "availableLanguage": ["de", "en"],
+      "areaServed": "DE"
+    }]
+  },
+  "breadcrumbs": {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.auroramedia.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Lösungen", "item": "https://www.auroramedia.io/loesungen" }
+    ]
+  }
+}

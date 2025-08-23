@@ -1,3 +1,5 @@
+import dynamic from "next/dynamic";
+const TeamSection = dynamic(() => import("@/components/team/TeamSection"));
 export const metadata = {
   title: "Über uns | AuroraMedia.io",
   description: "Mission, Vision und Team von AuroraMedia.io",
@@ -28,23 +30,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="mt-12">
-        <h2 className="text-2xl font-semibold">Team</h2>
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <article className="space-y-2 text-slate-700">
-            <h3 className="font-semibold">Harry</h3>
-            <p>
-              Harry ist der Mann für die Verbindung von Präzision und Kreativität. Als ehemaliger Banker und IT-Entwickler bringt er nicht nur technologisches Know-how mit, sondern auch eine analytische Denkweise, die komplexe Projekte strukturiert. Doch Harrys Herz schlägt auch über den Wolken: Als leidenschaftlicher Pilot und offizieller Prüfer für den DAEC (Deutscher Aeroclub) vereint er die Disziplin der Luftfahrt mit der Agilität der Medienwelt. Für ihn ist jedes Projekt wie ein Flug – geplant, aber immer bereit für überraschende Horizonte.
-            </p>
-          </article>
-          <article className="space-y-2 text-slate-700">
-            <h3 className="font-semibold">Mehdi</h3>
-            <p>
-              Mehdi ist der strategische Tausendsassa: Nach Stationen in der Touristik, einem BWL-Studium und prägenden Jahren in der Medizinbranche weiß er, wie man Ideen marktfähig macht. Seine Liebe zum Tauchen – stets auf der Suche nach verborgenen „Schätzen“ unter der Oberfläche – spiegelt sich in seinem Arbeitsstil wider: Er durchdringt komplexe Herausforderungen, um nachhaltige Lösungen zu finden. Von Harry ließ er sich zudem zum Himmel entführen und absolvierte seine Flugausbildung – heute sieht er Projekte gern aus beiden Perspektiven: von oben (strategisch) und von unten (operativ).
-            </p>
-          </article>
-        </div>
-      </section>
+      <TeamSection />
     </main>
   );
 }

@@ -1,0 +1,18 @@
+{
+  "routes": [
+    { "path": "/", "name": "Home" },
+    { "path": "/loesungen", "name": "Lösungen", "children": [
+      { "path": "/service/ai-agenten", "name": "AI-Agenten & Voicebots" },
+      { "path": "/service/workflows", "name": "Automatisierte Workflows" },
+      { "path": "/service/content", "name": "Content & Channel Growth" }
+    ]},
+    { "path": "/branchen", "name": "Branchen" },
+    { "path": "/preise", "name": "Preise" },
+    { "path": "/cases", "name": "Cases" },
+    { "path": "/blog", "name": "Blog" },
+    { "path": "/ueber-uns", "name": "Über uns" },
+    { "path": "/kontakt", "name": "Kontakt" },
+    { "path": "/impressum", "name": "Impressum" },
+    { "path": "/datenschutz", "name": "Datenschutz" }
+  ]
+}

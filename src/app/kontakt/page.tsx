@@ -3,6 +3,7 @@ export const metadata = {
   description: "Demo buchen oder kostenloses Audit anfragen.",
 };
 import KontaktForm from "./KontaktForm";
+import { Suspense } from "react";
 
 export default function Page() {
   return (
@@ -10,7 +11,9 @@ export default function Page() {
       <h1 className="text-3xl font-bold">Kontakt</h1>
       <p className="mt-3 text-slate-600">Demo buchen oder kostenloses Audit anfragen.</p>
       <div className="mt-8 max-w-xl">
-        <KontaktForm />
+        <Suspense fallback={<div className="text-slate-500">Formular wird geladen…</div>}>
+          <KontaktForm />
+        </Suspense>
       </div>
     </main>
   );

@@ -1,0 +1,1 @@
+Die Navigationsstruktur trennt Use‑Case‑orientierte Services (unter „Lösungen“) von Proof‑/Trust‑Bereichen (Cases, Blog, Über uns). „Kontakt“ und „Preise“ sind top‑visible. Datenschutz & Impressum sind im Footer. Dieses Setup unterstützt klare Nutzerpfade (Hero → Service → Case → Kontakt) und SEO‑Silos (Service‑Cluster).

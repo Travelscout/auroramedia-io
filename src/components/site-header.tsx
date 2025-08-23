@@ -1,26 +1,37 @@
 "use client";
 
-import React, { type ReactElement } from "react";
+import React, { type ReactElement, useState } from "react";
 import Link from "next/link";
+import { AuroraLogo } from "@/components/brand/Logo";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export function SiteHeader(): ReactElement {
+  const [imgOk, setImgOk] = useState(true);
   return (
     <header className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
       <div className="flex items-center gap-4">
-        <Link href="/" className="w-10 h-10 rounded-2xl bg-gradient-to-br from-indigo-500 to-pink-400 flex items-center justify-center text-white font-bold" aria-label="AuroraMedia Startseite">
-          A
+        <Link href="/" className="flex items-center min-h-32 md:min-h-40" aria-label="AuroraMedia Startseite">
+          {imgOk ? (
+            <Image
+              src="/images/auroramedia-logo-black.png"
+              alt="AuroraMedia"
+              width={1000}
+              height={250}
+              priority
+              sizes="(min-width: 1024px) 1000px, (min-width:768px) 900px, 800px"
+              className="h-32 md:h-40 w-auto max-w-[1000px]"
+              onError={() => setImgOk(false)}
+            />
+          ) : (
+            <AuroraLogo size={160} />
+          )}
+          <span className="sr-only">AuroraMedia</span>
         </Link>
-        <div>
-          <div className="font-semibold">AuroraMedia</div>
-          <div className="text-xs text-slate-500 -mt-1">AI-Agenten &amp; Automatisierung — Düsseldorf</div>
-        </div>
       </div>
       <nav className="hidden md:flex gap-6 items-center text-sm">
-        <Link className="hover:underline" href="/#features">Leistungen</Link>
-        <Link className="hover:underline" href="/#ai-demo">AI Demo</Link>
-        <Link className="hover:underline" href="/preise">Preise</Link>
         <Link className="hover:underline" href="/loesungen">Lösungen</Link>
+        <Link className="hover:underline" href="/preise">Preise</Link>
         <Link className="hover:underline" href="/branchen">Branchen</Link>
         <Link className="hover:underline" href="/ueber-uns">Über uns</Link>
         <Link className="hover:underline" href="/cases">Cases</Link>

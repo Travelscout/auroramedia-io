@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type ReactElement } from "react";
+import { useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -12,18 +13,30 @@ const FormSchema = z.object({
   name: z.string().min(2, "Bitte gib deinen Namen ein"),
   email: z.string().email("Bitte eine gültige E-Mail eingeben"),
   message: z.string().min(10, "Bitte eine Nachricht mit mindestens 10 Zeichen eingeben"),
+  plan: z.enum(["start", "scale", "enterprise"]).optional(),
 });
 
 type FormValues = z.infer<typeof FormSchema>;
 
 export default function KontaktForm(): ReactElement {
   const [sent, setSent] = useState<boolean>(false);
+  const searchParams = useSearchParams();
+  const planParam = (searchParams.get("plan") as "start" | "scale" | "enterprise" | null) ?? null;
+  const planLabel = planParam === "start" ? "Aurora Start" : planParam === "scale" ? "Aurora Scale" : planParam === "enterprise" ? "Aurora Enterprise" : null;
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm<FormValues>({ resolver: zodResolver(FormSchema) });
+  } = useForm<FormValues>({
+    resolver: zodResolver(FormSchema),
+    defaultValues: planLabel
+      ? ({
+          message: `Betreff: ${planLabel} – Bitte um Kontaktaufnahme`,
+          plan: planParam ?? undefined,
+        } as Partial<FormValues>)
+      : undefined,
+  });
 
   const onSubmit = async (values: FormValues) => {
     const res = await fetch("/api/contact", {
@@ -44,6 +57,10 @@ export default function KontaktForm(): ReactElement {
           <div className="text-green-600">Danke! Wir melden uns zeitnah.</div>
         ) : (
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            {planLabel && (
+              <div className="text-sm text-slate-600">Ausgewähltes Paket: <span className="font-medium">{planLabel}</span></div>
+            )}
+            <input type="hidden" value={planParam ?? ""} {...register("plan")} />
             <div>
               <label htmlFor="name" className="block text-sm font-medium">Name</label>
               <Input id="name" {...register("name")} />

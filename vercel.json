@@ -2,7 +2,8 @@
   "name": "auroramedia-io",
   "buildCommand": "npm run build",
   "devCommand": "next dev",
-  "git": { "deploymentsEnabled": true }
+  "git": { "deploymentsEnabled": true },
+  "regions": ["fra1"]
 }
 
 
