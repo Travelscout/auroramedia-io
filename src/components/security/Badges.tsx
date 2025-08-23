@@ -1,4 +1,5 @@
-import { Shield, CheckCircle, Workflow } from "lucide-react";
+import React from 'react';
+import { Shield, CheckCircle } from 'lucide-react';
 
 // n8n Logo SVG
 function N8nLogo() {
@@ -73,7 +74,7 @@ export function ComplianceBadges() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {items.map((item, idx) => {
+      {items.map((item) => {
         const Icon = item.icon;
         const Flag = item.flag;
         

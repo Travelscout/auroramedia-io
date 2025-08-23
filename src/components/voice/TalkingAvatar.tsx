@@ -1,9 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Mic, MicOff, Loader2 } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
+import React, { useState, useCallback, useEffect, useMemo, useRef } from 'react';
+import { Button } from '@/components/ui/button';
+import { Mic, MicOff, Loader2 } from 'lucide-react';
 
 interface CustomSpeechRecognitionEvent {
   resultIndex: number;
@@ -43,11 +42,10 @@ type Props = {
 
 export default function TalkingAvatar({ onResult, lang = "de-DE" }: Props) {
   const [isListening, setIsListening] = useState(false);
-  const [isSpeaking, setIsSpeaking] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [transcript, setTranscript] = useState("");
-  const recognitionRef = useRef<CustomSpeechRecognition | null>(null);
+  const [transcript, setTranscript] = useState('');
+  const [isProcessing, setIsProcessing] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const recognitionRef = useRef<CustomSpeechRecognition | null>(null);
 
   const recognitionSupported = useMemo(() => {
     return typeof window !== "undefined" && (window.SpeechRecognition || window.webkitSpeechRecognition);
@@ -77,8 +75,8 @@ export default function TalkingAvatar({ onResult, lang = "de-DE" }: Props) {
       u.pitch = 1.1; // Leicht höhere Tonhöhe für freundlicheren Klang
       u.volume = 1.0; // Volle Lautstärke
       
-      setIsSpeaking(true);
-      u.onend = () => setIsSpeaking(false);
+      setIsProcessing(true);
+      u.onend = () => setIsProcessing(false);
       
       window.speechSynthesis.cancel();
       window.speechSynthesis.speak(u);
@@ -89,7 +87,7 @@ export default function TalkingAvatar({ onResult, lang = "de-DE" }: Props) {
 
   const ask = useCallback(async (message: string) => {
     if (!message.trim()) return;
-    setLoading(true);
+    setIsProcessing(true);
     // User-Input sofort leeren nach dem Absenden
     setTranscript("");
     try {
@@ -103,7 +101,7 @@ export default function TalkingAvatar({ onResult, lang = "de-DE" }: Props) {
       onResult?.(reply);
       if (reply) speak(reply);
     } finally {
-      setLoading(false);
+      setIsProcessing(false);
     }
   }, [onResult, speak]);
 
@@ -112,7 +110,6 @@ export default function TalkingAvatar({ onResult, lang = "de-DE" }: Props) {
     const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!Recognition) return;
     const rec = new Recognition();
-    recognitionRef.current = rec;
     rec.lang = lang;
     rec.continuous = false;
     rec.interimResults = true;
@@ -180,7 +177,7 @@ export default function TalkingAvatar({ onResult, lang = "de-DE" }: Props) {
             <MicOff className="h-4 w-4" />
           </Button>
         )}
-        {loading && (
+        {isProcessing && (
           <Button size="sm" variant="secondary" disabled>
             <Loader2 className="h-4 w-4 animate-spin" />
           </Button>

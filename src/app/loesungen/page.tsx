@@ -6,7 +6,7 @@ export const metadata = {
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Workflow, MessageSquareMore, Film, CheckCircle, Clock, Shield, TrendingUp, Users } from "lucide-react";
+import { ArrowRight, Workflow, MessageSquareMore, Film, CheckCircle, Shield, TrendingUp, Users } from "lucide-react";
 import EnhancedDemo from "@/components/demo/EnhancedDemo";
 
 export default function Page() {

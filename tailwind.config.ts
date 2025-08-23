@@ -15,6 +15,9 @@ const config: Config = {
         'gradient-flow': 'gradient-flow 8s ease infinite',
         'neural-float': 'neural-float 6s ease-in-out infinite',
         'neural-pulse': 'neural-pulse 3s ease-in-out infinite',
+        'fadeInUp': 'fadeInUp 0.6s ease-out forwards',
+        'grow': 'grow 0.5s ease-out forwards',
+        'slide': 'slide 20s linear infinite',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

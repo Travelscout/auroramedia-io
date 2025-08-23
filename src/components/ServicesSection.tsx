@@ -39,11 +39,7 @@ const ServicesSection: React.FC = () => {
     <section id="services" className="relative py-20 lg:py-32 bg-gray-900 text-white overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/10 to-transparent" 
-             style={{ 
-               backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(96,165,250,0.05) 50px, rgba(96,165,250,0.05) 100px)',
-               animation: 'slide 20s linear infinite'
-             }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/10 to-transparent animate-pulse" />
       </div>
 
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
@@ -64,11 +60,8 @@ const ServicesSection: React.FC = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-500 hover:transform hover:scale-105 hover:-translate-y-2"
-              style={{ 
-                animationDelay: `${service.delay}ms`,
-                animation: 'fadeInUp 0.6s ease-out forwards'
-              }}
+              className="group relative bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-500 hover:transform hover:scale-105 hover:-translate-y-2 animate-fadeInUp"
+              style={{ animationDelay: `${service.delay}ms` }}
             >
               {/* Gradient Background on Hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -105,11 +98,8 @@ const ServicesSection: React.FC = () => {
                   {[...Array(5)].map((_, i) => (
                     <div
                       key={i}
-                      className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex-1 opacity-30 group-hover:opacity-100 transition-all duration-300"
-                      style={{ 
-                        animationDelay: `${i * 100}ms`,
-                        animation: 'grow 0.5s ease-out forwards'
-                      }}
+                      className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex-1 opacity-30 group-hover:opacity-100 transition-all duration-300 animate-grow"
+                      style={{ animationDelay: `${i * 100}ms` }}
                     />
                   ))}
                 </div>
