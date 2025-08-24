@@ -4,12 +4,7 @@
   "installCommand": "npm install",
   "outputDirectory": ".next",
   "git": { "deploymentsEnabled": true },
-  "regions": ["fra1"],
-  "functions": {
-    "src/app/api/**/*.ts": {
-      "runtime": "nodejs18.x"
-    }
-  }
+  "regions": ["fra1"]
 }
 
 
