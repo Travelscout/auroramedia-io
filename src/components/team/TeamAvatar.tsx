@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 interface TeamAvatarProps {
   src: string;
@@ -11,12 +12,12 @@ interface TeamAvatarProps {
 export default function TeamAvatar({ src, alt, className }: TeamAvatarProps) {
   const [imgSrc, setImgSrc] = useState(src);
   return (
-    <img
+    <Image
       src={imgSrc}
       alt={alt}
+      width={200}
+      height={200}
       className={className}
-      loading="lazy"
-      decoding="async"
       onError={() => setImgSrc("/images/team/placeholder.svg")}
     />
   );

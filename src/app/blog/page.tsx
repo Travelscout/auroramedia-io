@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BLOG_POSTS } from "@/lib/blog-content";
@@ -26,9 +27,11 @@ export default function Page() {
                 <div className="space-y-3">
                   {post.coverImage && (
                     <div className="aspect-video bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg overflow-hidden">
-                      <img 
+                      <Image 
                         src={post.coverImage} 
                         alt={post.title}
+                        width={400}
+                        height={225}
                         className="w-full h-full object-cover"
                       />
                     </div>

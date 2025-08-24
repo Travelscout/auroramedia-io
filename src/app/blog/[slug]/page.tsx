@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
+import Image from "next/image";
 import { BLOG_POSTS } from "@/lib/blog-content";
 
 interface PageProps {
@@ -92,9 +93,11 @@ export default async function BlogPost({ params }: PageProps) {
       {/* Featured Image */}
       {post.coverImage && (
         <div className="aspect-video bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg overflow-hidden mb-8">
-          <img 
+          <Image 
             src={post.coverImage} 
             alt={post.title}
+            width={800}
+            height={450}
             className="w-full h-full object-cover"
           />
         </div>

@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, ArrowUpRight, ArrowDownRight, AlertTriangle, Wand2, ThumbsUp, Phone, CheckCircle, Clock3, TrendingUp, Bug, Ticket, Smile } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import CaseModal from "./CaseModal";
 
 export default function Page() {
@@ -28,7 +29,7 @@ export default function Page() {
   function VisualHeader({ points, label, image }: { points: number[]; label: string; image: string }) {
     return (
       <div className="relative rounded-xl overflow-hidden h-28">
-        <img src={image} alt="Case Visual" className="absolute inset-0 w-full h-full object-cover" />
+        <Image src={image} alt="Case Visual" width={400} height={112} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-white/75" />
         <div className="absolute inset-0 p-3">
           <Sparkline points={points} stroke="#6366f1" strokeWidth={3} />
