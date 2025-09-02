@@ -73,13 +73,6 @@ export default function HomePage() {
                 <p className="text-slate-600 mb-6">
                   Intelligente Konversations-KI für Kundenbetreuung und Support
                 </p>
-                <Image 
-                  src="/images/dsgvo-konform.png" 
-                  alt="KI-Ready Badge" 
-                  width={120} 
-                  height={40}
-                  className="mx-auto"
-                />
               </CardContent>
             </Card>
 
@@ -95,8 +88,8 @@ export default function HomePage() {
                   100% rechtssichere Datenverarbeitung nach EU-Standards
                 </p>
                 <Image 
-                  src="/images/n8n.png" 
-                  alt="n8n - Workflow Automation Platform" 
+                  src="/images/dsgvo-konform.png" 
+                  alt="DSGVO-konform Badge" 
                   width={120} 
                   height={40}
                   className="mx-auto"
@@ -115,7 +108,13 @@ export default function HomePage() {
                 <p className="text-slate-600 mb-6">
                   Professionelle Workflow-Automatisierung für Ihr Unternehmen
                 </p>
-                <div className="text-sm text-slate-500">Workflow Automation</div>
+                <Image 
+                  src="/images/n8n.png" 
+                  alt="n8n - Workflow Automation Platform" 
+                  width={120} 
+                  height={40}
+                  className="mx-auto"
+                />
               </CardContent>
             </Card>
           </div>

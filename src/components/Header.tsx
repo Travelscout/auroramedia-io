@@ -24,7 +24,6 @@ const Header: React.FC = () => {
     { label: 'Lösungen', href: '/loesungen' },
     { label: 'Branchen', href: '/branchen' },
     { label: 'Über uns', href: '/ueber-uns' },
-    { label: 'Cases', href: '/cases' },
     { label: 'Blog', href: '/blog' },
     { label: 'Kontakt', href: '/kontakt' },
   ];
