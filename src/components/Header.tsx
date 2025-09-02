@@ -32,7 +32,7 @@ const Header: React.FC = () => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-gray-900/95 backdrop-blur-md border-b border-gray-800/50' 
+          ? 'bg-black/95 backdrop-blur-md border-b border-gray-800/50' 
           : 'bg-transparent'
       }`}
     >
@@ -43,12 +43,12 @@ const Header: React.FC = () => {
             <Image 
               src="/images/auroramedia-logo-black.png" 
               alt="AuroraMedia" 
-              width={40} 
-              height={40}
-              className="w-10 h-10"
+              width={80} 
+              height={80}
+              className="w-20 h-20"
             />
             <div className="text-white">
-              <div className="font-bold text-lg">AuroraMedia</div>
+              <div className="font-bold text-xl">AuroraMedia</div>
             </div>
           </Link>
 
@@ -68,7 +68,7 @@ const Header: React.FC = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Link href="/kontakt">
-              <button className="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-full text-white font-semibold transition-all duration-300">
+              <button className="px-6 py-2 bg-white text-black hover:bg-gray-200 rounded-full font-semibold transition-all duration-300">
                 Kostenloses Audit
               </button>
             </Link>
@@ -92,7 +92,7 @@ const Header: React.FC = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-gray-900/95 backdrop-blur-md border-t border-gray-800/50">
+          <div className="md:hidden bg-black/95 backdrop-blur-md border-t border-gray-800/50">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <Link
@@ -106,7 +106,7 @@ const Header: React.FC = () => {
               ))}
               <div className="px-3 py-2">
                 <Link href="/kontakt">
-                  <button className="w-full px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-full text-white font-semibold">
+                  <button className="w-full px-6 py-2 bg-white text-black hover:bg-gray-200 rounded-full font-semibold">
                     Kostenloses Audit
                   </button>
                 </Link>

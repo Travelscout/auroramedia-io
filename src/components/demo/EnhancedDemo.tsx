@@ -127,11 +127,11 @@ const EnhancedDemo: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white p-6">
+    <div className="min-h-screen bg-black text-white p-6">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
             Live KI-Agent Builder
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
@@ -146,14 +146,14 @@ const EnhancedDemo: React.FC = () => {
               <div key={step} className="flex items-center">
                 <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${
                   currentStep >= step 
-                    ? 'bg-blue-500 text-white' 
+                    ? 'bg-white text-black' 
                     : 'bg-gray-600 text-gray-300'
                 }`}>
                   {step}
                 </div>
                 {step < 3 && (
                   <div className={`w-16 h-1 mx-2 ${
-                    currentStep > step ? 'bg-blue-500' : 'bg-gray-600'
+                    currentStep > step ? 'bg-white' : 'bg-gray-600'
                   }`} />
                 )}
               </div>
@@ -179,7 +179,7 @@ const EnhancedDemo: React.FC = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => handleIndustrySelect(industry.id)}
-                    className="p-6 bg-gray-800/60 backdrop-blur-sm rounded-xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:bg-gray-700/60"
+                    className="p-6 bg-gray-800/60 backdrop-blur-sm rounded-xl border border-gray-700/50 hover:border-white/50 transition-all duration-300 hover:bg-gray-700/60"
                   >
                     <div className="text-4xl mb-4">{industry.icon}</div>
                     <h3 className="text-xl font-semibold mb-2">{industry.name}</h3>
@@ -205,7 +205,7 @@ const EnhancedDemo: React.FC = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => handleUseCaseSelect(useCase.id)}
-                    className="p-6 bg-gray-800/60 backdrop-blur-sm rounded-xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:bg-gray-700/60"
+                    className="p-6 bg-gray-800/60 backdrop-blur-sm rounded-xl border border-gray-700/50 hover:border-white/50 transition-all duration-300 hover:bg-gray-700/60"
                   >
                     <div className="text-blue-400 mb-4">{useCase.icon}</div>
                     <h3 className="text-xl font-semibold mb-2">{useCase.title}</h3>
@@ -241,8 +241,8 @@ const EnhancedDemo: React.FC = () => {
               <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl border border-gray-700/50 p-6">
                 {/* Agent Info */}
                 <div className="flex items-center gap-4 mb-6 p-4 bg-gray-700/30 rounded-lg">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                    <Bot className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                    <Bot className="w-6 h-6 text-black" />
                   </div>
                   <div className="flex-1">
                     <h3 className="font-semibold">KI-Agent für {industries.find(i => i.id === selectedIndustry)?.name}</h3>
@@ -263,7 +263,7 @@ const EnhancedDemo: React.FC = () => {
                     >
                       <div className={`max-w-xs lg:max-w-md p-3 rounded-lg ${
                         message.isUser
-                          ? 'bg-blue-600 text-white'
+                          ? 'bg-white text-black'
                           : 'bg-gray-700 text-gray-100'
                       }`}>
                         <p>{message.text}</p>
@@ -295,11 +295,11 @@ const EnhancedDemo: React.FC = () => {
                     onChange={(e) => setInputMessage(e.target.value)}
                     onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
                     placeholder="Schreiben Sie eine Nachricht..."
-                    className="flex-1 px-4 py-2 bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500/50"
+                    className="flex-1 px-4 py-2 bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white/50"
                   />
                   <button
                     onClick={handleSendMessage}
-                    className="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200"
+                    className="px-6 py-2 bg-white text-black hover:bg-gray-200 rounded-lg transition-colors duration-200"
                   >
                     Senden
                   </button>
@@ -326,7 +326,7 @@ const EnhancedDemo: React.FC = () => {
           </p>
           <a
             href="/kontakt"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-semibold hover:from-blue-500 hover:to-purple-500 transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black rounded-full font-semibold hover:bg-gray-200 transition-all duration-300 hover:scale-105"
           >
             Kostenloses Erstgespräch
             <Zap className="w-5 h-5" />

@@ -40,7 +40,7 @@ export default function HomePage() {
           </div>
 
           {/* AI Demo Section */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
+          <div id="ai-demo" className="bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
             <div className="text-center mb-6">
               <h3 className="text-2xl font-semibold text-slate-900 mb-2">Live AI-Preview</h3>
               <p className="text-slate-600">Interaktiv 💬 Stellen Sie eine Frage über KI-Agenten...</p>

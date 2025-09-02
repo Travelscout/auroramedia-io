@@ -18,7 +18,7 @@ export default function TeamAvatar({ src, alt, className }: TeamAvatarProps) {
       width={200}
       height={200}
       className={className}
-      onError={() => setImgSrc("/images/team/placeholder.svg")}
+      onError={() => setImgSrc("/images/team/mehdi.png")}
     />
   );
 }
