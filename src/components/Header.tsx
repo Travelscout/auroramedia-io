@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,10 +18,15 @@ const Header: React.FC = () => {
   }, []);
 
   const navItems = [
-    { label: 'Services', href: '#services' },
-    { label: 'Portfolio', href: '#portfolio' },
-    { label: 'Über uns', href: '#about' },
-    { label: 'Kontakt', href: '#contact' },
+    { label: 'Leistungen', href: '/#features' },
+    { label: 'AI Demo', href: '/#ai-demo' },
+    { label: 'Preise', href: '/preise' },
+    { label: 'Lösungen', href: '/loesungen' },
+    { label: 'Branchen', href: '/branchen' },
+    { label: 'Über uns', href: '/ueber-uns' },
+    { label: 'Cases', href: '/cases' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Kontakt', href: '/kontakt' },
   ];
 
   return (
@@ -33,36 +40,39 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-              </svg>
-            </div>
+          <Link href="/" className="flex items-center gap-3">
+            <Image 
+              src="/images/auroramedia-logo-black.png" 
+              alt="AuroraMedia" 
+              width={40} 
+              height={40}
+              className="w-10 h-10"
+            />
             <div className="text-white">
-              <div className="font-bold text-lg">AURORAMEDIA</div>
-              <div className="text-xs text-gray-400 -mt-1">inspired by tomorrow</div>
+              <div className="font-bold text-lg">AuroraMedia</div>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-6">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.label}
                 href={item.href}
-                className="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+                className="text-gray-300 hover:text-white transition-colors duration-200 font-medium text-sm"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-semibold hover:from-blue-500 hover:to-purple-500 transition-all duration-300 hover:scale-105">
-              Beratung
-            </button>
+            <Link href="/kontakt">
+              <button className="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-full text-white font-semibold transition-all duration-300">
+                Kostenloses Audit
+              </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -86,19 +96,21 @@ const Header: React.FC = () => {
           <div className="md:hidden bg-gray-900/95 backdrop-blur-md border-t border-gray-800/50">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
                   href={item.href}
                   className="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
               <div className="px-3 py-2">
-                <button className="w-full px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-semibold">
-                  Beratung
-                </button>
+                <Link href="/kontakt">
+                  <button className="w-full px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-full text-white font-semibold">
+                    Kostenloses Audit
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

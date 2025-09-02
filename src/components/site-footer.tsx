@@ -3,15 +3,21 @@ import Link from "next/link";
 
 export function SiteFooter(): ReactElement {
   return (
-    <footer id="kontakt" className="py-12 mt-12 border-t border-slate-200 text-center">
-      <p>© 2025 AuroraMedia — KI-Agenten aus Düsseldorf</p>
-      <div className="mt-2 flex justify-center gap-4 text-sm">
-        <Link className="hover:underline" href="/impressum">Impressum</Link>
-        <Link className="hover:underline" href="/datenschutz">Datenschutz</Link>
-        <Link className="hover:underline" href="/agb">AGB</Link>
+    <footer className="bg-slate-900 text-white py-12">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center">
+          <p className="text-slate-400">© 2025 AuroraMedia — KI-Agenten aus Düsseldorf</p>
+          <div className="mt-4 flex justify-center gap-6 text-sm">
+            <Link className="text-slate-400 hover:text-white transition-colors" href="/impressum">Impressum</Link>
+            <Link className="text-slate-400 hover:text-white transition-colors" href="/datenschutz">Datenschutz</Link>
+            <Link className="text-slate-400 hover:text-white transition-colors" href="/agb">AGB</Link>
+          </div>
+        </div>
       </div>
     </footer>
   );
 }
+
+export default SiteFooter;
 
 
