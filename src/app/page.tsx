@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, CheckCircle, Star, MessageCircle, Mic, Users, Shield, Zap } from "lucide-react";
 import EnhancedDemo from "@/components/demo/EnhancedDemo";
 import TalkingAvatar from "@/components/voice/TalkingAvatar";
+import AIPreviewChat from "@/components/AIPreviewChat";
 
 export default function HomePage() {
   return (
@@ -41,45 +42,15 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Side - Live AI Preview */}
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-semibold text-black mb-2">Live AI-Preview</h3>
-                <p className="text-black text-sm">Interaktiv</p>
-              </div>
-              
-              {/* Chat Interface */}
-              <div className="bg-gray-50 rounded-lg p-4 mb-4">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center">
-                    <MessageCircle className="w-4 h-4 text-white" />
-                  </div>
-                  <span className="text-sm text-black">KI-Agent</span>
+                          {/* Right Side - Live AI Preview */}
+              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-semibold text-black mb-2">Live AI-Preview</h3>
+                  <p className="text-black text-sm">Interaktiv</p>
                 </div>
-                <p className="text-sm text-black mb-4">
-                  Stellen Sie eine Frage über KI-Agenten...
-                </p>
+                
+                <AIPreviewChat />
               </div>
-              
-              {/* Input Field */}
-              <div className="flex gap-2">
-                <input
-                  type="text"
-                  placeholder="Ihre Frage..."
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-                <button className="px-4 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                  </svg>
-                </button>
-                <button className="px-4 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-                  </svg>
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -107,9 +78,9 @@ export default function HomePage() {
                   Intelligente Konversations-KI für Kundenbetreuung und Support
                 </p>
                 <div className="flex justify-center mb-4">
-                  <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center">
+                    <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                   </div>
                 </div>
@@ -133,14 +104,14 @@ export default function HomePage() {
                     alt="DSGVO-konform Badge" 
                     width={120} 
                     height={40}
-                    className="border-2 border-black rounded-lg p-2 bg-white shadow-lg"
+                    className="shadow-lg"
                   />
                   <Image 
                     src="/images/EUAIActlogo.png" 
                     alt="EU AI Act Badge" 
                     width={120} 
                     height={40}
-                    className="border-2 border-black rounded-lg p-2 bg-white shadow-lg"
+                    className="shadow-lg"
                   />
                 </div>
               </CardContent>
@@ -163,7 +134,7 @@ export default function HomePage() {
                     alt="n8n - Workflow Automation Platform" 
                     width={120} 
                     height={40}
-                    className="border-2 border-black rounded-lg p-2 bg-white shadow-lg"
+                    className="shadow-lg"
                   />
                 </div>
               </CardContent>
@@ -446,23 +417,23 @@ export default function HomePage() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-20 bg-blue-600">
+      <section className="py-20 bg-black">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-white mb-4">Bleiben Sie auf dem Laufenden</h2>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-xl text-gray-300 mb-8">
             Erhalten Sie exklusive Einblicke in die neuesten KI-Trends und Automatisierungsmöglichkeiten
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input 
               type="email" 
               placeholder="Ihre E-Mail-Adresse" 
-              className="flex-1 px-4 py-3 rounded-lg border-0 text-slate-900"
+              className="flex-1 px-4 py-3 rounded-lg border-0 text-black"
             />
-            <Button className="bg-white text-blue-600 hover:bg-blue-50 px-8">
+            <Button className="bg-white text-black hover:bg-gray-200 px-8">
               Newsletter abonnieren
             </Button>
           </div>
-          <p className="text-blue-100 text-sm mt-4">
+          <p className="text-gray-300 text-sm mt-4">
             DSGVO-konform • Jederzeit kündbar • Keine Spam
           </p>
         </div>

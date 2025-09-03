@@ -42,9 +42,9 @@ const Header: React.FC = () => {
             <Image 
               src="/images/auroramedia-logo-black.png" 
               alt="AuroraMedia" 
-              width={100} 
-              height={100}
-              className="w-25 h-25"
+              width={150} 
+              height={150}
+              className="w-38 h-38"
             />
             <div className="text-white">
               <div className="font-bold text-xl">AuroraMedia</div>
@@ -62,16 +62,34 @@ const Header: React.FC = () => {
                 {item.label}
               </Link>
             ))}
-          </nav>
+                      </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Link href="/kontakt">
-                              <button className="px-6 py-2 bg-black text-white hover:bg-gray-800 rounded-full font-semibold transition-all duration-300">
+            {/* Compliance Logos */}
+            <div className="hidden lg:flex items-center gap-3 mr-6">
+              <Image 
+                src="/images/dsgvo-konform.png" 
+                alt="DSGVO-konform" 
+                width={80} 
+                height={25}
+                className="shadow-sm"
+              />
+              <Image 
+                src="/images/EUAIActlogo.png" 
+                alt="EU AI Act" 
+                width={80} 
+                height={25}
+                className="shadow-sm"
+              />
+            </div>
+
+            {/* CTA Button */}
+            <div className="hidden md:block">
+              <Link href="/kontakt">
+                <button className="px-6 py-2 bg-black text-white hover:bg-gray-800 rounded-full font-semibold transition-all duration-300">
                   Kostenloses Audit
                 </button>
-            </Link>
-          </div>
+              </Link>
+            </div>
 
           {/* Mobile Menu Button */}
           <button
