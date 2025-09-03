@@ -44,7 +44,7 @@ export default function HomePage() {
                      {/* Compliance Logos */}
                      <div className="flex justify-center gap-4 items-center mt-8">
                        <Image 
-                         src="/images/dsgvo-konform.png" 
+                         src="/images/DSGVO.jpg" 
                          alt="DSGVO-konform" 
                          width={100} 
                          height={30}
