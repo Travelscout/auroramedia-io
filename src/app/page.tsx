@@ -119,8 +119,8 @@ export default function HomePage() {
             {/* Service 2 */}
             <Card className="border-0 shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Shield className="w-8 h-8 text-green-600" />
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Shield className="w-8 h-8 text-black" />
                 </div>
                 <Badge className="mb-4 bg-black text-white">EU-konform</Badge>
                 <h3 className="text-2xl font-semibold text-black mb-4">DSGVO-konform</h3>
@@ -133,14 +133,14 @@ export default function HomePage() {
                     alt="DSGVO-konform Badge" 
                     width={120} 
                     height={40}
-                    className="border-2 border-black rounded-lg p-2 bg-white"
+                    className="border-2 border-black rounded-lg p-2 bg-white shadow-lg"
                   />
                   <Image 
-                    src="/images/euai-act.png" 
+                    src="/images/EUAIActlogo.png" 
                     alt="EU AI Act Badge" 
                     width={120} 
                     height={40}
-                    className="border-2 border-black rounded-lg p-2 bg-white"
+                    className="border-2 border-black rounded-lg p-2 bg-white shadow-lg"
                   />
                 </div>
               </CardContent>
@@ -149,21 +149,23 @@ export default function HomePage() {
             {/* Service 3 */}
             <Card className="border-0 shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Zap className="w-8 h-8 text-purple-600" />
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Zap className="w-8 h-8 text-black" />
                 </div>
                 <Badge className="mb-4 bg-black text-white">Enterprise Ready</Badge>
                 <h3 className="text-2xl font-semibold text-black mb-4">n8n Ready</h3>
                 <p className="text-black mb-6">
                   Professionelle Workflow-Automatisierung für Ihr Unternehmen
                 </p>
-                <Image 
-                  src="/images/n8n.png" 
-                  alt="n8n - Workflow Automation Platform" 
-                  width={120} 
-                  height={40}
-                  className="mx-auto"
-                />
+                <div className="flex justify-center">
+                  <Image 
+                    src="/images/n8n.png" 
+                    alt="n8n - Workflow Automation Platform" 
+                    width={120} 
+                    height={40}
+                    className="border-2 border-black rounded-lg p-2 bg-white shadow-lg"
+                  />
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -296,16 +298,16 @@ export default function HomePage() {
                     className="rounded-full mr-4"
                   />
                   <div>
-                    <h4 className="text-lg font-semibold text-slate-900">Dr. Sarah Schmitz</h4>
-                    <p className="text-slate-600">Chefärztin, Klinik Düsseldorf</p>
+                    <h4 className="text-lg font-semibold text-black">Dr. Sarah Schmitz</h4>
+                    <p className="text-black">Chefärztin, Klinik Düsseldorf</p>
                   </div>
                 </div>
-                <blockquote className="text-slate-700 mb-4 italic">
+                <blockquote className="text-black mb-4 italic">
                   "AuroraMedia hat unseren Support komplett revolutioniert. 80% weniger Wartezeiten für Patienten und unser Personal kann sich auf die wirklich wichtigen Aufgaben konzentrieren."
                 </blockquote>
                 <div className="flex items-center">
-                  <Star className="w-5 h-5 text-yellow-400 fill-current mr-1" />
-                  <span className="text-sm font-semibold text-slate-900">80% weniger Wartezeiten</span>
+                  <Star className="w-5 h-5 text-black fill-current mr-1" />
+                  <span className="text-sm font-semibold text-black">80% weniger Wartezeiten</span>
                 </div>
               </CardContent>
             </Card>
@@ -322,16 +324,16 @@ export default function HomePage() {
                     className="rounded-full mr-4"
                   />
                   <div>
-                    <h4 className="text-lg font-semibold text-slate-900">Shawn Gajsinghe</h4>
-                    <p className="text-slate-600">CEO, Crover SE Berlin</p>
+                    <h4 className="text-lg font-semibold text-black">Shawn Gajsinghe</h4>
+                    <p className="text-black">CEO, Crover SE Berlin</p>
                   </div>
                 </div>
-                <blockquote className="text-slate-700 mb-4 italic">
+                <blockquote className="text-black mb-4 italic">
                   "Die KI-Agenten haben unseren Vertrieb um 60% effizienter gemacht. Unsere Sales-Teams können sich jetzt auf die qualifizierten Leads konzentrieren."
                 </blockquote>
                 <div className="flex items-center">
-                  <Star className="w-5 h-5 text-yellow-400 fill-current mr-1" />
-                  <span className="text-sm font-semibold text-slate-900">60% effizienter</span>
+                  <Star className="w-5 h-5 text-black fill-current mr-1" />
+                  <span className="text-sm font-semibold text-black">60% effizienter</span>
                 </div>
               </CardContent>
             </Card>
@@ -348,16 +350,16 @@ export default function HomePage() {
                     className="rounded-full mr-4"
                   />
                   <div>
-                    <h4 className="text-lg font-semibold text-slate-900">Leyla Azadi</h4>
-                    <p className="text-slate-600">Product Owner, Supreme Holdings</p>
+                    <h4 className="text-lg font-semibold text-black">Leyla Azadi</h4>
+                    <p className="text-black">Product Owner, Supreme Holdings</p>
                   </div>
                 </div>
-                <blockquote className="text-slate-700 mb-4 italic">
+                <blockquote className="text-black mb-4 italic">
                   "24/7 Kundenbetreuung ohne zusätzliches Personal. Das war genau das, was wir brauchten. Unsere Conversion-Rate ist um 35% gestiegen."
                 </blockquote>
                 <div className="flex items-center">
-                  <Star className="w-5 h-5 text-yellow-400 fill-current mr-1" />
-                  <span className="text-sm font-semibold text-slate-900">35% mehr Conversion</span>
+                  <Star className="w-5 h-5 text-black fill-current mr-1" />
+                  <span className="text-sm font-semibold text-black">35% mehr Conversion</span>
                 </div>
               </CardContent>
             </Card>
