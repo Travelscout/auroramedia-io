@@ -19,7 +19,6 @@ const Header: React.FC = () => {
 
   const navItems = [
     { label: 'Leistungen', href: '/#features' },
-    { label: 'AI Demo', href: '/#ai-demo' },
     { label: 'Preise', href: '/preise' },
     { label: 'Lösungen', href: '/loesungen' },
     { label: 'Branchen', href: '/branchen' },
