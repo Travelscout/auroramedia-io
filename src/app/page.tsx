@@ -158,6 +158,35 @@ export default function HomePage() {
               </CardContent>
             </Card>
           </div>
+          
+          {/* Compliance Logos */}
+          <div className="mt-16 text-center">
+            <h3 className="text-2xl font-bold text-black mb-8">Unsere Compliance-Standards</h3>
+            <div className="bg-gray-100 rounded-2xl p-8 border border-gray-200 max-w-2xl mx-auto">
+              <div className="flex justify-center items-center gap-8">
+                <div className="text-center">
+                  <Image 
+                    src="/images/dsgvo-konform.png" 
+                    alt="DSGVO-konform" 
+                    width={120} 
+                    height={40}
+                    className="mb-2"
+                  />
+                  <p className="text-black font-semibold">DSGVO-konform</p>
+                </div>
+                <div className="text-center">
+                  <Image 
+                    src="/images/EUAIActlogo.png" 
+                    alt="EU AI Act konform" 
+                    width={120} 
+                    height={40}
+                    className="mb-2"
+                  />
+                  <p className="text-black font-semibold">EU AI Act konform</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -358,42 +387,75 @@ export default function HomePage() {
 
       {/* FAQ Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Häufige Fragen</h2>
-            <p className="text-xl text-slate-600">Alles was Sie über unsere KI-Lösungen wissen müssen</p>
+            <h2 className="text-4xl font-bold text-black mb-4">Häufige Fragen</h2>
+            <p className="text-xl text-black">Alles was Sie über unsere KI-Lösungen wissen müssen</p>
           </div>
 
-          <div className="space-y-4">
-            <Card className="border-0 shadow-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-slate-900 mb-3">
+                <h3 className="text-lg font-semibold text-black mb-3">
                   Wie schnell können wir mit der KI-Implementierung starten?
                 </h3>
-                <p className="text-slate-600">
+                <p className="text-black text-sm">
                   Wir starten bereits nach 2 Wochen mit der ersten Phase. Die komplette Implementierung dauert je nach Umfang 4-8 Wochen.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-slate-900 mb-3">
+                <h3 className="text-lg font-semibold text-black mb-3">
                   Sind Ihre Lösungen wirklich DSGVO-konform?
                 </h3>
-                <p className="text-slate-600">
+                <p className="text-black text-sm">
                   Ja, 100%. Wir hosten ausschließlich in der EU, haben alle notwendigen Verträge und implementieren Privacy by Design.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-slate-900 mb-3">
+                <h3 className="text-lg font-semibold text-black mb-3">
                   Welche Branchen unterstützen Sie?
                 </h3>
-                <p className="text-slate-600">
+                <p className="text-black text-sm">
                   Wir haben bereits erfolgreiche Projekte in Medizin, KMU, E-Commerce und Support umgesetzt. Jede Branche ist willkommen!
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold text-black mb-3">
+                  Was kostet eine KI-Lösung?
+                </h3>
+                <p className="text-black text-sm">
+                  Die Kosten variieren je nach Umfang. Wir bieten maßgeschneiderte Lösungen ab 2.500€/Monat. Kontaktieren Sie uns für ein individuelles Angebot.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold text-black mb-3">
+                  Können wir die KI in bestehende Systeme integrieren?
+                </h3>
+                <p className="text-black text-sm">
+                  Ja, wir integrieren unsere KI-Lösungen in alle gängigen CRM-Systeme, Websites und Kommunikationskanäle wie WhatsApp, Telefon und E-Mail.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold text-black mb-3">
+                  Wie funktioniert der Support nach der Implementierung?
+                </h3>
+                <p className="text-black text-sm">
+                  Wir bieten 24/7 Support, regelmäßige Updates und Schulungen für Ihr Team. Die KI lernt kontinuierlich und wird mit Ihrem Unternehmen besser.
                 </p>
               </CardContent>
             </Card>

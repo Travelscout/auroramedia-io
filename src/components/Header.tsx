@@ -42,9 +42,9 @@ const Header: React.FC = () => {
             <Image 
               src="/images/auroramedia-logo-black.png" 
               alt="AuroraMedia" 
-              width={60} 
-              height={60}
-              className="w-15 h-15"
+              width={100} 
+              height={100}
+              className="w-25 h-25"
             />
             <div className="text-white">
               <div className="font-bold text-xl">AuroraMedia</div>
@@ -67,7 +67,7 @@ const Header: React.FC = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Link href="/kontakt">
-              <button className="px-6 py-2 bg-white text-black hover:bg-gray-200 rounded-full font-semibold transition-all duration-300">
+              <button className="px-6 py-2 bg-black text-white hover:bg-gray-800 rounded-full font-semibold transition-all duration-300">
                 Kostenloses Audit
               </button>
             </Link>
