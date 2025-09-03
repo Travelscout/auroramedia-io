@@ -67,9 +67,9 @@ const Header: React.FC = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Link href="/kontakt">
-              <button className="px-6 py-2 bg-black text-white hover:bg-gray-800 rounded-full font-semibold transition-all duration-300">
-                Kostenloses Audit
-              </button>
+                              <button className="px-6 py-2 bg-black text-white hover:bg-gray-800 rounded-full font-semibold transition-all duration-300">
+                  Kostenloses Audit
+                </button>
             </Link>
           </div>
 

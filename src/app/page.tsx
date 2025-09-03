@@ -127,13 +127,22 @@ export default function HomePage() {
                 <p className="text-black mb-6">
                   100% rechtssichere Datenverarbeitung nach EU-Standards
                 </p>
-                <Image 
-                  src="/images/dsgvo-konform.png" 
-                  alt="DSGVO-konform Badge" 
-                  width={120} 
-                  height={40}
-                  className="mx-auto"
-                />
+                <div className="flex justify-center gap-4 items-center">
+                  <Image 
+                    src="/images/dsgvo-konform.png" 
+                    alt="DSGVO-konform Badge" 
+                    width={120} 
+                    height={40}
+                    className="border-2 border-black rounded-lg p-2 bg-white"
+                  />
+                  <Image 
+                    src="/images/euai-act.png" 
+                    alt="EU AI Act Badge" 
+                    width={120} 
+                    height={40}
+                    className="border-2 border-black rounded-lg p-2 bg-white"
+                  />
+                </div>
               </CardContent>
             </Card>
 
@@ -157,35 +166,6 @@ export default function HomePage() {
                 />
               </CardContent>
             </Card>
-          </div>
-          
-          {/* Compliance Logos */}
-          <div className="mt-16 text-center">
-            <h3 className="text-2xl font-bold text-black mb-8">Unsere Compliance-Standards</h3>
-            <div className="bg-gray-100 rounded-2xl p-8 border border-gray-200 max-w-2xl mx-auto">
-              <div className="flex justify-center items-center gap-8">
-                <div className="text-center">
-                  <Image 
-                    src="/images/dsgvo-konform.png" 
-                    alt="DSGVO-konform" 
-                    width={120} 
-                    height={40}
-                    className="mb-2"
-                  />
-                  <p className="text-black font-semibold">DSGVO-konform</p>
-                </div>
-                <div className="text-center">
-                  <Image 
-                    src="/images/EUAIActlogo.png" 
-                    alt="EU AI Act konform" 
-                    width={120} 
-                    height={40}
-                    className="mb-2"
-                  />
-                  <p className="text-black font-semibold">EU AI Act konform</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -382,22 +362,22 @@ export default function HomePage() {
               </CardContent>
             </Card>
           </div>
-        </div>
-      </section>
+          </div>
+        </section>
 
       {/* FAQ Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-black mb-4">Häufige Fragen</h2>
             <p className="text-xl text-black">Alles was Sie über unsere KI-Lösungen wissen müssen</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold text-black mb-3">
-                  Wie schnell können wir mit der KI-Implementierung starten?
+                  Wie schnell können wir starten?
                 </h3>
                 <p className="text-black text-sm">
                   Wir starten bereits nach 2 Wochen mit der ersten Phase. Die komplette Implementierung dauert je nach Umfang 4-8 Wochen.
@@ -408,7 +388,7 @@ export default function HomePage() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold text-black mb-3">
-                  Sind Ihre Lösungen wirklich DSGVO-konform?
+                  Sind Ihre Lösungen DSGVO-konform?
                 </h3>
                 <p className="text-black text-sm">
                   Ja, 100%. Wir hosten ausschließlich in der EU, haben alle notwendigen Verträge und implementieren Privacy by Design.
@@ -441,10 +421,10 @@ export default function HomePage() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold text-black mb-3">
-                  Können wir die KI in bestehende Systeme integrieren?
+                  Können wir bestehende Systeme integrieren?
                 </h3>
                 <p className="text-black text-sm">
-                  Ja, wir integrieren unsere KI-Lösungen in alle gängigen CRM-Systeme, Websites und Kommunikationskanäle wie WhatsApp, Telefon und E-Mail.
+                  Ja, wir integrieren nahtlos in Ihre bestehenden CRM-, ERP- und Kommunikationssysteme. n8n ermöglicht flexible Verbindungen.
                 </p>
               </CardContent>
             </Card>
@@ -452,10 +432,10 @@ export default function HomePage() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold text-black mb-3">
-                  Wie funktioniert der Support nach der Implementierung?
+                  Wie funktioniert der Support?
                 </h3>
                 <p className="text-black text-sm">
-                  Wir bieten 24/7 Support, regelmäßige Updates und Schulungen für Ihr Team. Die KI lernt kontinuierlich und wird mit Ihrem Unternehmen besser.
+                  Wir bieten 24/7 Support für alle unsere Lösungen. Unser Team ist immer erreichbar und kümmert sich um alle technischen Fragen.
                 </p>
               </CardContent>
             </Card>
@@ -485,6 +465,6 @@ export default function HomePage() {
           </p>
         </div>
       </section>
-    </main>
+      </main>
   );
 }
