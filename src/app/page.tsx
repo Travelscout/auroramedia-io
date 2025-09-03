@@ -88,33 +88,36 @@ export default function HomePage() {
       <section id="features" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Unsere Kernleistungen</h2>
-            <p className="text-xl text-slate-600">Professionelle KI-Lösungen für Ihr Unternehmen</p>
+            <h2 className="text-4xl font-bold text-black mb-4">Unsere Kernleistungen</h2>
+            <p className="text-xl text-black">Professionelle KI-Lösungen für Ihr Unternehmen</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Service 1 */}
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+            <Card className="border-0 shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Image 
-                    src="/images/auroramedia-logo-black.png" 
-                    alt="AuroraMedia KI-Agenten" 
-                    width={48} 
-                    height={48}
-                    className="w-12 h-12"
-                  />
+                  <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
                 </div>
                 <Badge className="mb-4 bg-black text-white">KI-Ready</Badge>
                 <h3 className="text-2xl font-semibold text-black mb-4">Sprach- und Textagenten</h3>
                 <p className="text-black mb-6">
                   Intelligente Konversations-KI für Kundenbetreuung und Support
                 </p>
+                <div className="flex justify-center mb-4">
+                  <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
             {/* Service 2 */}
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+            <Card className="border-0 shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Shield className="w-8 h-8 text-green-600" />
@@ -135,7 +138,7 @@ export default function HomePage() {
             </Card>
 
             {/* Service 3 */}
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+            <Card className="border-0 shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Zap className="w-8 h-8 text-purple-600" />
@@ -159,11 +162,11 @@ export default function HomePage() {
       </section>
 
       {/* Why AuroraMedia Section */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Warum AuroraMedia?</h2>
-            <p className="text-xl text-slate-600">Konkrete Ergebnisse für Ihr Unternehmen</p>
+            <h2 className="text-4xl font-bold text-black mb-4">Warum AuroraMedia?</h2>
+            <p className="text-xl text-black">Konkrete Ergebnisse für Ihr Unternehmen</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -191,70 +194,70 @@ export default function HomePage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Ihre Branche, unsere Expertise</h2>
-            <p className="text-xl text-slate-600">Maßgeschneiderte Lösungen für verschiedene Branchen</p>
+            <h2 className="text-4xl font-bold text-black mb-4">Ihre Branche, unsere Expertise</h2>
+            <p className="text-xl text-black">Maßgeschneiderte Lösungen für verschiedene Branchen</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+            <Card className="border-0 shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
               <CardContent className="p-6">
                 <Image 
                   src="/images/branchen/kliniken.jpg" 
                   alt="Medizin - KI-Agenten für Patientenbetreuung, Terminverwaltung & Support" 
                   width={300} 
                   height={200}
-                  className="w-full h-48 object-cover rounded-lg mb-4"
+                  className="w-full h-48 object-cover rounded-lg mb-4 group-hover:scale-105 transition-transform duration-300"
                 />
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">Medizin</h3>
-                <p className="text-slate-600 text-sm">
+                <h3 className="text-xl font-semibold text-black mb-2">Medizin</h3>
+                <p className="text-black text-sm">
                   KI-Agenten für Patientenbetreuung, Terminverwaltung & Support
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+            <Card className="border-0 shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
               <CardContent className="p-6">
                 <Image 
                   src="/images/branchen/kmu.jpg" 
                   alt="KMU - Automatisierung von Vertrieb, Buchhaltung & Kundenservice" 
                   width={300} 
                   height={200}
-                  className="w-full h-48 object-cover rounded-lg mb-4"
+                  className="w-full h-48 object-cover rounded-lg mb-4 group-hover:scale-105 transition-transform duration-300"
                 />
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">KMU</h3>
-                <p className="text-slate-600 text-sm">
+                <h3 className="text-xl font-semibold text-black mb-2">KMU</h3>
+                <p className="text-black text-sm">
                   Automatisierung von Vertrieb, Buchhaltung & Kundenservice
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+            <Card className="border-0 shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
               <CardContent className="p-6">
                 <Image 
                   src="/images/branchen/medtech.jpg" 
                   alt="E-Commerce - 24/7 Kundenbetreuung, Bestellabwicklung & Support" 
                   width={300} 
                   height={200}
-                  className="w-full h-48 object-cover rounded-lg mb-4"
+                  className="w-full h-48 object-cover rounded-lg mb-4 group-hover:scale-105 transition-transform duration-300"
                 />
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">E-Commerce</h3>
-                <p className="text-slate-600 text-sm">
+                <h3 className="text-xl font-semibold text-black mb-2">E-Commerce</h3>
+                <p className="text-black text-sm">
                   24/7 Kundenbetreuung, Bestellabwicklung & Support
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+            <Card className="border-0 shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
               <CardContent className="p-6">
                 <Image 
                   src="/images/Baustelle trifft Handwerkskunst.png" 
                   alt="Baugewerbe & Handwerk - KI-gestützte Projektplanung, Materialverwaltung & Kundenservice für Handwerksbetriebe" 
                   width={300} 
                   height={200}
-                  className="w-full h-48 object-cover rounded-lg mb-4"
+                  className="w-full h-48 object-cover rounded-lg mb-4 group-hover:scale-105 transition-transform duration-300"
                 />
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">Baugewerbe & Handwerk</h3>
-                <p className="text-slate-600 text-sm">
+                <h3 className="text-xl font-semibold text-black mb-2">Baugewerbe & Handwerk</h3>
+                <p className="text-black text-sm">
                   KI-gestützte Projektplanung, Materialverwaltung & Kundenservice für Handwerksbetriebe
                 </p>
               </CardContent>
@@ -264,11 +267,11 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Was unsere Kunden sagen</h2>
-            <p className="text-xl text-slate-600">Erfolgsgeschichten aus der Praxis</p>
+            <h2 className="text-4xl font-bold text-black mb-4">Was unsere Kunden sagen</h2>
+            <p className="text-xl text-black">Erfolgsgeschichten aus der Praxis</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
