@@ -43,9 +43,9 @@ const Header: React.FC = () => {
             <Image 
               src="/images/auroramedia-logo-black.png" 
               alt="AuroraMedia" 
-              width={80} 
-              height={80}
-              className="w-20 h-20"
+              width={60} 
+              height={60}
+              className="w-15 h-15"
             />
             <div className="text-white">
               <div className="font-bold text-xl">AuroraMedia</div>
