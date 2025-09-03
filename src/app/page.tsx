@@ -397,10 +397,10 @@ export default function HomePage() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold text-black mb-3">
-                  Was kostet eine KI-Lösung?
+                  Welche Technologien nutzen Sie?
                 </h3>
                 <p className="text-black text-sm">
-                  Die Kosten variieren je nach Umfang. Wir bieten maßgeschneiderte Lösungen ab 2.500€/Monat. Kontaktieren Sie uns für ein individuelles Angebot.
+                  Wir arbeiten mit modernsten KI-Modellen (GPT-4, Claude), n8n für Workflow-Automation, und entwickeln maßgeschneiderte RAG-Systeme für Ihr spezifisches Wissen.
                 </p>
               </CardContent>
             </Card>
@@ -423,6 +423,39 @@ export default function HomePage() {
                 </h3>
                 <p className="text-black text-sm">
                   Wir bieten 24/7 Support für alle unsere Lösungen. Unser Team ist immer erreichbar und kümmert sich um alle technischen Fragen.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold text-black mb-3">
+                  Können wir die KI trainieren?
+                </h3>
+                <p className="text-black text-sm">
+                  Ja, wir trainieren die KI mit Ihren spezifischen Daten und Prozessen. So wird sie zu einem echten Experten für Ihr Unternehmen.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold text-black mb-3">
+                  Wie messen wir den Erfolg?
+                </h3>
+                <p className="text-black text-sm">
+                  Wir implementieren detaillierte Analytics und ROI-Tracking. Sie sehen genau, wie viel Zeit und Kosten Sie sparen.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold text-black mb-3">
+                  Gibt es eine Testphase?
+                </h3>
+                <p className="text-black text-sm">
+                  Ja, wir bieten eine kostenlose Testphase von 2 Wochen. So können Sie die KI-Lösung in Ihrem Umfeld erproben.
                 </p>
               </CardContent>
             </Card>
