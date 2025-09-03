@@ -64,24 +64,6 @@ const Header: React.FC = () => {
             ))}
                       </nav>
 
-            {/* Compliance Logos */}
-            <div className="hidden lg:flex items-center gap-3 mr-6">
-              <Image 
-                src="/images/dsgvo-konform.png" 
-                alt="DSGVO-konform" 
-                width={80} 
-                height={25}
-                className="shadow-sm"
-              />
-              <Image 
-                src="/images/EUAIActlogo.png" 
-                alt="EU AI Act" 
-                width={80} 
-                height={25}
-                className="shadow-sm"
-              />
-            </div>
-
             {/* CTA Button */}
             <div className="hidden md:block">
               <Link href="/kontakt">
