@@ -11,51 +11,74 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-50 to-gray-50 py-20">
+      <section className="relative bg-white py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <Badge className="mb-4 bg-black text-white border-black">
-              Neu · KI-Agenten
-            </Badge>
-            <h1 className="text-5xl font-bold text-slate-900 mb-6 leading-tight">
-              KI-Agenten, die Ihre Teams entlasten –<br />
-              <span className="text-black">Vertrieb, Service & Support</span> neu gedacht.
-            </h1>
-            <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
-              AuroraMedia entwickelt maßgeschneiderte KI-Lösungen, die Ihre Prozesse automatisieren, 
-              Kosten senken und für echte Entlastung sorgen. Design-first. DSGVO-konform. Zukunftssicher.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/loesungen">
-                <Button size="lg" className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg">
-                  🎯 Jetzt Demo erleben
-                </Button>
-              </Link>
-              <Link href="/kontakt">
-                <Button size="lg" variant="outline" className="border-black text-black hover:bg-gray-50 px-8 py-4 text-lg">
-                  📞 Kostenloses Audit
-                </Button>
-              </Link>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Hero Content */}
+            <div className="text-left">
+              <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
+                Neu · KI-Agenten
+              </Badge>
+              <h1 className="text-5xl font-bold text-slate-900 mb-6 leading-tight">
+                KI-Agenten, die Ihre Teams entlasten –<br />
+                <span className="text-blue-600">Vertrieb, Service & Support</span> neu gedacht.
+              </h1>
+              <p className="text-xl text-slate-600 mb-8">
+                AuroraMedia entwickelt maßgeschneiderte KI-Lösungen, die Ihre Prozesse automatisieren, 
+                Kosten senken und für echte Entlastung sorgen. Design-first. DSGVO-konform. Zukunftssicher.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/loesungen">
+                  <Button size="lg" className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg">
+                    🎯 Jetzt Demo erleben
+                  </Button>
+                </Link>
+                <Link href="/kontakt">
+                  <Button size="lg" variant="outline" className="border-black text-black hover:bg-gray-50 px-8 py-4 text-lg">
+                    📞 Kostenloses Audit
+                  </Button>
+                </Link>
+              </div>
             </div>
-          </div>
 
-          {/* AI Demo Section */}
-          <div id="ai-demo" className="bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
-            <div className="text-center mb-6">
-              <h3 className="text-2xl font-semibold text-slate-900 mb-2">Live AI-Preview</h3>
-              <p className="text-slate-600">Interaktiv 💬 Stellen Sie eine Frage über KI-Agenten...</p>
-            </div>
-            <div className="text-center py-12">
-              <h4 className="text-xl font-semibold text-slate-900 mb-4">KI-Agent Demo</h4>
-              <p className="text-slate-600 mb-6">Erleben Sie unsere KI-Agenten in Aktion</p>
-              <Link href="/loesungen#ai-demo">
-                <Button size="lg" className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg">
-                  🚀 Live Demo starten
-                </Button>
-              </Link>
-            </div>
-            <div className="mt-6 flex justify-center">
-              <TalkingAvatar />
+            {/* Right Side - Live AI Preview */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-semibold text-slate-900 mb-2">Live AI-Preview</h3>
+                <p className="text-slate-600 text-sm">Interaktiv</p>
+              </div>
+              
+              {/* Chat Interface */}
+              <div className="bg-gray-50 rounded-lg p-4 mb-4">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                    <MessageCircle className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-sm text-gray-600">KI-Agent</span>
+                </div>
+                <p className="text-sm text-gray-700 mb-4">
+                  Stellen Sie eine Frage über KI-Agenten...
+                </p>
+              </div>
+              
+              {/* Input Field */}
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  placeholder="Ihre Frage..."
+                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+                <button className="px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                  </svg>
+                </button>
+                <button className="px-4 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -74,15 +97,11 @@ export default function HomePage() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Image 
-                    src="/images/auroramedia-logo-black.png" 
-                    alt="AuroraMedia Agenten" 
-                    width={48} 
-                    height={48}
-                    className="w-12 h-12"
-                  />
+                  <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
                 </div>
-                <Badge className="mb-4 bg-black text-white">KI-Ready</Badge>
+                <Badge className="mb-4 bg-green-100 text-green-800">KI-Ready</Badge>
                 <h3 className="text-2xl font-semibold text-slate-900 mb-4">Sprach- und Textagenten</h3>
                 <p className="text-slate-600 mb-6">
                   Intelligente Konversations-KI für Kundenbetreuung und Support
@@ -96,7 +115,7 @@ export default function HomePage() {
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Shield className="w-8 h-8 text-green-600" />
                 </div>
-                <Badge className="mb-4 bg-black text-white">EU-konform</Badge>
+                <Badge className="mb-4 bg-green-100 text-green-800">EU-konform</Badge>
                 <h3 className="text-2xl font-semibold text-slate-900 mb-4">DSGVO-konform</h3>
                 <p className="text-slate-600 mb-6">
                   100% rechtssichere Datenverarbeitung nach EU-Standards
@@ -117,7 +136,7 @@ export default function HomePage() {
                 <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Zap className="w-8 h-8 text-purple-600" />
                 </div>
-                <Badge className="mb-4 bg-black text-white">Enterprise Ready</Badge>
+                <Badge className="mb-4 bg-green-100 text-green-800">Enterprise Ready</Badge>
                 <h3 className="text-2xl font-semibold text-slate-900 mb-4">n8n Ready</h3>
                 <p className="text-slate-600 mb-6">
                   Professionelle Workflow-Automatisierung für Ihr Unternehmen
@@ -145,19 +164,19 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-black mb-2">80%</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">80%</div>
               <p className="text-slate-600">Zeitersparnis bei Routineaufgaben</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-black mb-2">60%</div>
+              <div className="text-4xl font-bold text-green-600 mb-2">60%</div>
               <p className="text-slate-600">Kostenreduktion im Support</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-black mb-2">24/7</div>
+              <div className="text-4xl font-bold text-purple-600 mb-2">24/7</div>
               <p className="text-slate-600">Verfügbarkeit Ihrer KI-Agenten</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-black mb-2">100%</div>
+              <div className="text-4xl font-bold text-orange-600 mb-2">100%</div>
               <p className="text-slate-600">DSGVO-konform & EU-konform</p>
             </div>
           </div>
