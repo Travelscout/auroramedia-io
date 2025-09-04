@@ -46,16 +46,16 @@ export default function HomePage() {
                        <Image 
                          src="/images/DSGVO.jpg" 
                          alt="DSGVO-konform" 
-                         width={100} 
-                         height={30}
-                         className="shadow-md"
+                         width={120} 
+                         height={40}
+                         className="shadow-lg"
                        />
                        <Image 
                          src="/images/EUAIActlogo.png" 
                          alt="EU AI Act" 
-                         width={100} 
-                         height={30}
-                         className="shadow-md"
+                         width={120} 
+                         height={40}
+                         className="shadow-lg"
                        />
                      </div>
             </div>
