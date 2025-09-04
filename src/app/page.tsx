@@ -190,8 +190,8 @@ export default function HomePage() {
               <p className="text-black">DSGVO-konform & EU-konform</p>
             </div>
           </div>
-        </div>
-      </section>
+          </div>
+        </section>
 
       {/* Industries Section */}
       <section className="py-20 bg-white">
