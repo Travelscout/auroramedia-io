@@ -12,7 +12,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-white pt-40 pb-20">
+      <section className="relative bg-white pt-48 pb-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Hero Content */}
@@ -35,11 +35,11 @@ export default function HomePage() {
                              🎯 Jetzt Demo erleben
                            </Button>
                          </Link>
-                         {/* DSGVO Logo unter "Jetzt Demo erleben" */}
+                         {/* AI ACT Logo unter "Jetzt Demo erleben" */}
                          <div className="mt-4">
                            <Image 
-                             src="/images/DSGVO.jpg" 
-                             alt="DSGVO-konform" 
+                             src="/AI ACt.png" 
+                             alt="AI Act" 
                              width={100} 
                              height={30}
                              className="shadow-lg"
@@ -53,11 +53,11 @@ export default function HomePage() {
                              📞 Kostenloses Audit
                            </Button>
                          </Link>
-                         {/* EU AI Act Logo unter "Kostenloses Audit" */}
+                         {/* DSGVO Logo unter "Kostenloses Audit" */}
                          <div className="mt-4">
                            <Image 
-                             src="/images/EUAIActlogo.png" 
-                             alt="EU AI Act" 
+                             src="/images/DSGVO.jpg" 
+                             alt="DSGVO-konform" 
                              width={100} 
                              height={30}
                              className="shadow-lg"

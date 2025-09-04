@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import Image from "next/image";
 const TeamSection = dynamic(() => import("@/components/team/TeamSection"));
 export const metadata = {
   title: "Über uns | AuroraMedia.io",
@@ -12,9 +13,18 @@ export default function Page() {
       <section className="pt-40 pb-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h1 className="text-5xl font-bold text-black mb-6">Über uns</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             Mission, Vision und Team von AuroraMedia.io - KI-Agenten aus Düsseldorf
           </p>
+          <div className="max-w-4xl mx-auto">
+            <Image
+              src="/images/auroramedia-logo-black.png"
+              alt="AuroraMedia Team"
+              width={400}
+              height={400}
+              className="mx-auto rounded-2xl shadow-xl"
+            />
+          </div>
         </div>
       </section>
 

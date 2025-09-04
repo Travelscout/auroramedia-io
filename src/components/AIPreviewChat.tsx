@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { MessageCircle, Send, Mic } from 'lucide-react';
 
+
+
 interface Message {
   id: number;
   text: string;
@@ -21,6 +23,7 @@ export default function AIPreviewChat() {
     }
   ]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isListening, setIsListening] = useState(false);
 
   const handleSendMessage = async () => {
     if (!inputMessage.trim()) return;
@@ -76,6 +79,44 @@ export default function AIPreviewChat() {
     }
   };
 
+  const handleVoiceInput = () => {
+    if (!('webkitSpeechRecognition' in window)) {
+      alert('Spracherkennung wird in diesem Browser nicht unterstützt.');
+      return;
+    }
+
+    if (isListening) {
+      setIsListening(false);
+      return;
+    }
+
+    setIsListening(true);
+
+    // @ts-ignore
+    const recognition = new (window as any).webkitSpeechRecognition();
+    
+    recognition.lang = 'de-DE';
+    recognition.continuous = false;
+    recognition.interimResults = false;
+
+    recognition.onresult = (event: any) => {
+      const transcript = event.results[0][0].transcript;
+      setInputMessage(transcript);
+      setIsListening(false);
+    };
+
+    recognition.onerror = (event: any) => {
+      console.error('Speech recognition error:', event.error);
+      setIsListening(false);
+    };
+
+    recognition.onend = () => {
+      setIsListening(false);
+    };
+
+    recognition.start();
+  };
+
   return (
     <div className="space-y-4">
       {/* Chat Messages */}
@@ -121,7 +162,14 @@ export default function AIPreviewChat() {
         >
           <Send className="w-5 h-5" />
         </button>
-        <button className="px-4 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
+        <button 
+          onClick={handleVoiceInput}
+          className={`px-4 py-3 rounded-lg transition-colors ${
+            isListening 
+              ? 'bg-red-500 text-white hover:bg-red-600' 
+              : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+          }`}
+        >
           <Mic className="w-5 h-5" />
         </button>
       </div>
