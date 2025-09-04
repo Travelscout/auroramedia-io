@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="pt-40 pb-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <Badge className="mb-4 bg-black text-white">🚀 Pilot in 14 Tagen</Badge>
           <h1 className="text-5xl font-bold text-black mb-6">Unsere KI-Lösungen</h1>

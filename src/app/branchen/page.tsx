@@ -11,16 +11,21 @@ import Image from "next/image";
 
 export default function Page() {
   return (
-    <main className="relative max-w-7xl mx-auto px-6 py-12">
-      {/* Deko-Gradient */}
-      <div aria-hidden className="pointer-events-none absolute -z-10 top-0 right-0 h-64 w-64 rounded-full bg-indigo-200/40 blur-3xl" />
-      <div aria-hidden className="pointer-events-none absolute -z-10 bottom-10 left-0 h-72 w-72 rounded-full bg-pink-200/40 blur-3xl" />
+    <main className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="pt-40 pb-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h1 className="text-5xl font-bold text-black mb-6">Branchen</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
+            Wir liefern branchenspezifische AI‑Lösungen – mit klaren KPIs und DSGVO‑Konformität.
+          </p>
+          <Badge className="bg-black text-white">EU/DE Hosting</Badge>
+        </div>
+      </section>
 
-      <div className="flex items-center gap-3">
-        <h1 className="text-3xl font-bold">Branchen</h1>
-        <Badge>EU/DE Hosting</Badge>
-      </div>
-      <p className="mt-3 text-slate-600">Wir liefern branchenspezifische AI‑Lösungen – mit klaren KPIs und DSGVO‑Konformität.</p>
+      {/* Content Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
 
       <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
         <div>
@@ -97,6 +102,8 @@ export default function Page() {
           </div>
         </div>
       </div>
+        </div>
+      </section>
     </main>
   );
 }

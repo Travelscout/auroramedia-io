@@ -7,8 +7,20 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <main className="max-w-7xl mx-auto px-6 py-12">
-      <h1 className="text-3xl font-bold">Über uns</h1>
+    <main className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="pt-40 pb-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h1 className="text-5xl font-bold text-black mb-6">Über uns</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Mission, Vision und Team von AuroraMedia.io - KI-Agenten aus Düsseldorf
+          </p>
+        </div>
+      </section>
+
+      {/* Content Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
       <section className="mt-6 space-y-4 text-slate-700">
         <p>
           Unsere digitale Marketingagentur hat sich das Ziel gesetzt, Künstliche Intelligenz und Automatisierung in die Arbeitswelt zu implementieren, um einen positiven Einfluss zu schaffen. Wir glauben, dass die Integration modernster Technologien nicht nur die Effizienz steigern, sondern auch die Kreativität und Innovationskraft in Unternehmen fördern kann. Durch maßgeschneiderte Lösungen helfen wir unseren Kunden, ihre Prozesse zu optimieren und ihre Zielgruppen effektiver zu erreichen. Unser Ansatz basiert auf einem tiefen Verständnis der individuellen Bedürfnisse jedes Unternehmens, sodass wir Strategien entwickeln, die sowohl nachhaltige Ergebnisse liefern als auch das Wachstum fördern. Gemeinsam gestalten wir die Zukunft der Arbeitswelt und setzen neue Maßstäbe im digitalen Marketing.
@@ -30,7 +42,9 @@ export default function Page() {
         </div>
       </section>
 
-      <TeamSection />
+          <TeamSection />
+        </div>
+      </section>
     </main>
   );
 }

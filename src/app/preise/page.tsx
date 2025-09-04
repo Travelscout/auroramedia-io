@@ -92,7 +92,7 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="pt-40 pb-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h1 className="text-5xl font-bold text-black mb-6">Transparente Preise</h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
