@@ -56,7 +56,7 @@ export default function HomePage() {
                          {/* DSGVO Logo unter "Kostenloses Audit" */}
                          <div className="mt-4">
                            <Image 
-                             src="/images/DSGVO.jpg" 
+                             src="/schwarz gelb dsgvo.jpg" 
                              alt="DSGVO-konform" 
                              width={100} 
                              height={30}

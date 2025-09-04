@@ -13,7 +13,7 @@ export function SiteFooter(): ReactElement {
           {/* Compliance Logos */}
           <div className="flex justify-center gap-4 items-center mb-6">
             <Image 
-              src="/images/DSGVO.jpg" 
+              src="/schwarz gelb dsgvo.jpg" 
               alt="DSGVO-konform Badge" 
               width={100} 
               height={30}

@@ -80,8 +80,14 @@ export default function AIPreviewChat() {
   };
 
   const handleVoiceInput = () => {
+    // Prüfe ob wir über HTTPS sind (erforderlich für Speech Recognition)
+    if (typeof window !== 'undefined' && window.location.protocol !== 'https:' && window.location.hostname !== 'localhost') {
+      alert('Spracherkennung funktioniert nur über HTTPS oder localhost.');
+      return;
+    }
+
     if (!('webkitSpeechRecognition' in window)) {
-      alert('Spracherkennung wird in diesem Browser nicht unterstützt.');
+      alert('Spracherkennung wird in diesem Browser nicht unterstützt. Bitte verwenden Sie Chrome oder Edge.');
       return;
     }
 
@@ -92,29 +98,47 @@ export default function AIPreviewChat() {
 
     setIsListening(true);
 
-    // @ts-ignore
-    const recognition = new (window as any).webkitSpeechRecognition();
-    
-    recognition.lang = 'de-DE';
-    recognition.continuous = false;
-    recognition.interimResults = false;
+    try {
+      // @ts-ignore
+      const recognition = new (window as any).webkitSpeechRecognition();
+      
+      recognition.lang = 'de-DE';
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
 
-    recognition.onresult = (event: any) => {
-      const transcript = event.results[0][0].transcript;
-      setInputMessage(transcript);
+      recognition.onstart = () => {
+        console.log('Spracherkennung gestartet');
+      };
+
+      recognition.onresult = (event: any) => {
+        const transcript = event.results[0][0].transcript;
+        console.log('Erkannt:', transcript);
+        setInputMessage(transcript);
+        setIsListening(false);
+      };
+
+      recognition.onerror = (event: any) => {
+        console.error('Speech recognition error:', event.error);
+        if (event.error === 'not-allowed') {
+          alert('Bitte erlauben Sie den Zugriff auf das Mikrofon.');
+        } else {
+          alert('Fehler bei der Spracherkennung: ' + event.error);
+        }
+        setIsListening(false);
+      };
+
+      recognition.onend = () => {
+        console.log('Spracherkennung beendet');
+        setIsListening(false);
+      };
+
+      recognition.start();
+    } catch (error) {
+      console.error('Fehler beim Starten der Spracherkennung:', error);
+      alert('Fehler beim Starten der Spracherkennung.');
       setIsListening(false);
-    };
-
-    recognition.onerror = (event: any) => {
-      console.error('Speech recognition error:', event.error);
-      setIsListening(false);
-    };
-
-    recognition.onend = () => {
-      setIsListening(false);
-    };
-
-    recognition.start();
+    }
   };
 
   return (
@@ -164,13 +188,14 @@ export default function AIPreviewChat() {
         </button>
         <button 
           onClick={handleVoiceInput}
-          className={`px-4 py-3 rounded-lg transition-colors ${
+          className={`px-4 py-3 rounded-lg transition-all duration-300 ${
             isListening 
-              ? 'bg-red-500 text-white hover:bg-red-600' 
+              ? 'bg-red-500 text-white hover:bg-red-600 animate-pulse' 
               : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
           }`}
+          title={isListening ? 'Aufnahme läuft...' : 'Sprachaufnahme starten'}
         >
-          <Mic className="w-5 h-5" />
+          <Mic className={`w-5 h-5 ${isListening ? 'animate-bounce' : ''}`} />
         </button>
       </div>
     </div>
