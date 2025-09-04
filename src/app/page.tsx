@@ -12,7 +12,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-white pt-48 pb-20">
+      <section className="relative bg-white pt-56 pb-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Hero Content */}

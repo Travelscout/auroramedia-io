@@ -36,7 +36,7 @@ const Header: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                       <div className="flex items-center justify-between h-28 lg:h-36">
+                       <div className="flex items-center justify-between h-32 lg:h-40">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <Image 

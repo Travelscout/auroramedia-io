@@ -20,8 +20,8 @@ export function SiteFooter(): ReactElement {
               className="shadow-md"
             />
             <Image 
-              src="/images/EUAIActlogo.png" 
-              alt="EU AI Act Badge" 
+              src="/AI ACt.png" 
+              alt="AI Act Badge" 
               width={100} 
               height={30}
               className="shadow-md"
