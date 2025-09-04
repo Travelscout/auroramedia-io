@@ -12,7 +12,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-white pt-32 pb-20">
+      <section className="relative bg-white pt-40 pb-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Hero Content */}
@@ -29,34 +29,41 @@ export default function HomePage() {
                   Kosten senken und für echte Entlastung sorgen. Design-first. DSGVO-konform. Zukunftssicher.
                 </p>
                                    <div className="flex flex-col sm:flex-row gap-4">
-                       <Link href="/loesungen">
-                         <Button size="lg" className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg">
-                           🎯 Jetzt Demo erleben
-                         </Button>
-                       </Link>
-                       <Link href="/kontakt">
-                         <Button size="lg" variant="outline" className="border-black text-black hover:bg-gray-50 px-8 py-4 text-lg">
-                           📞 Kostenloses Audit
-                         </Button>
-                       </Link>
-                     </div>
-                     
-                     {/* Compliance Logos */}
-                     <div className="flex justify-center gap-4 items-center mt-8">
-                       <Image 
-                         src="/images/DSGVO.jpg" 
-                         alt="DSGVO-konform" 
-                         width={120} 
-                         height={40}
-                         className="shadow-lg"
-                       />
-                       <Image 
-                         src="/images/EUAIActlogo.png" 
-                         alt="EU AI Act" 
-                         width={120} 
-                         height={40}
-                         className="shadow-lg"
-                       />
+                       <div className="flex flex-col items-center">
+                         <Link href="/loesungen">
+                           <Button size="lg" className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg">
+                             🎯 Jetzt Demo erleben
+                           </Button>
+                         </Link>
+                         {/* DSGVO Logo unter "Jetzt Demo erleben" */}
+                         <div className="mt-4">
+                           <Image 
+                             src="/images/DSGVO.jpg" 
+                             alt="DSGVO-konform" 
+                             width={100} 
+                             height={30}
+                             className="shadow-lg"
+                           />
+                         </div>
+                       </div>
+                       
+                       <div className="flex flex-col items-center">
+                         <Link href="/kontakt">
+                           <Button size="lg" variant="outline" className="border-black text-black hover:bg-gray-50 px-8 py-4 text-lg">
+                             📞 Kostenloses Audit
+                           </Button>
+                         </Link>
+                         {/* EU AI Act Logo unter "Kostenloses Audit" */}
+                         <div className="mt-4">
+                           <Image 
+                             src="/images/EUAIActlogo.png" 
+                             alt="EU AI Act" 
+                             width={100} 
+                             height={30}
+                             className="shadow-lg"
+                           />
+                         </div>
+                       </div>
                      </div>
             </div>
 
