@@ -36,38 +36,38 @@ const Header: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-20 lg:h-28">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <Image 
               src="/images/auroramedia-logo-black.png" 
               alt="AuroraMedia" 
-              width={150} 
-              height={150}
-              className="w-38 h-38"
+              width={180} 
+              height={180}
+              className="w-45 h-45"
             />
             <div className="text-white">
-              <div className="font-bold text-xl">AuroraMedia</div>
+              <div className="font-bold text-2xl">AuroraMedia</div>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6">
+                    {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-gray-300 hover:text-white transition-colors duration-200 font-medium text-sm"
+                className="text-gray-300 hover:text-white transition-colors duration-200 font-medium text-base"
               >
                 {item.label}
               </Link>
             ))}
-                      </nav>
+          </nav>
 
             {/* CTA Button */}
             <div className="hidden md:block">
               <Link href="/kontakt">
-                <button className="px-6 py-2 bg-black text-white hover:bg-gray-800 rounded-full font-semibold transition-all duration-300">
+                <button className="px-8 py-3 bg-black text-white hover:bg-gray-800 rounded-full font-semibold text-base transition-all duration-300">
                   Kostenloses Audit
                 </button>
               </Link>
